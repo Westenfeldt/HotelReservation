@@ -14,6 +14,7 @@ namespace HotelReservation
             Console.WriteLine("Angiv ønskes type. Doubleværelse: D");
             Console.WriteLine("Angiv ønskes type. Familieværlese: F");
 
+
             
 
             string tybeV = Console.ReadLine();
@@ -30,7 +31,6 @@ namespace HotelReservation
             {
                 case "e":
                     Console.ForegroundColor = ConsoleColor.Red;
-
                     Console.WriteLine("Du har valgt enkeltværelser, hvor mange ønskes der?");
                     string antalRe = Console.ReadLine();
                     double antalVe = float.Parse(antalRe);
@@ -41,7 +41,15 @@ namespace HotelReservation
                     total = antalVe * enkelt * antalnate;
 
                     totalkurs = total * (kurs / 100);
-                    Console.WriteLine("Din pris er {0} euro og ønskes der at betales i dkk er prisen {1:N2} kr.", totalkurs, total);
+                    Console.Write("Din pris er ");
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.Write(total);
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.Write(" euro og ønskes der at betales i dkk er prisen ");
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.Write(totalkurs);
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.Write(" kr");
 
                     break;
                 case "d":
@@ -57,10 +65,15 @@ namespace HotelReservation
                     total = antalVd * dobbelt * antalnatd;
 
                     totalkurs = total * (kurs / 100);
-                    Console.WriteLine("Din pris er {0} euro og ønskes der at betales i dkk er prisen {1:N2} kr.", totalkurs, total);
-
-
-                    Console.WriteLine("Prisen i Euro er {0}", totalkurs);
+                    Console.Write("Din pris er ");
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.Write(total);
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.Write(" euro og ønskes der at betales i dkk er prisen ");
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.Write(totalkurs);
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.Write(" kr");
                     break;
                 case "f":
                     Console.ForegroundColor = ConsoleColor.Green;
@@ -75,7 +88,16 @@ namespace HotelReservation
                     total = antalVf * familie * antalnatf;
 
                     totalkurs = total * (kurs / 100);
-                    Console.WriteLine("Din pris er {0} euro og ønskes der at betales i dkk er prisen {1:N2} kr.", totalkurs, total);
+                    //Console.WriteLine("Din pris er {0} euro og ønskes der at betales i dkk er prisen {1:N2} kr.", totalkurs, total);
+                    Console.Write("Din pris er ");
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.Write(totalkurs);
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.Write(" og ønskes der at betales i dkk er prisn ");
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.Write(total);
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.Write(" kr");
                     break;
                 default:
                     Console.WriteLine("FORKERT");
